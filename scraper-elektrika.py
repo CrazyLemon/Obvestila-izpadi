@@ -32,10 +32,12 @@ class ElektroprimorskaSpider(scrapy.Spider):
             item['date'] = date[0].strip().split(', ')[1]
             item['fromHour'] = fromHour[0].strip().split(',')[0]
             item['toHour'] = toHour[0].strip().split(',')[0]
-            
+
             for cities in locationEl.css('.field-item'):
                 city = cities.css('h3 ::text').extract()
-                streets = cities.css('li ::text').extract()
+                streets = cities.css('ul ::text').extract()
+                # We need to remove new line char from the array
+                streets = filter(lambda a: a != '\n', streets)
 
                 for i, element in enumerate(city):
                     item['city'] = city[i]
