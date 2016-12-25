@@ -22,4 +22,6 @@ TODO:
  - [ ] Rižanski vodovod
  - [ ] Others ...  
 
-- [ ] Misc ...
+- [ ] Prepare for heroku !
+
+- [ ] Misc 
